@@ -1,35 +1,16 @@
 import * as React from 'react';
-
 import './scss/app';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
-export default class App extends React.Component<IAppProps, IAppState> {
-
-    constructor(props: IAppProps) {
-        super(props);
-
-        this.state = { name: null };
-    }
-
-    async componentWillMount() {
-        let r = await fetch('/api/hello');
-        let name = await r.json();
-        this.setState({ name })
-    }
-
-    render () {
-        return (
-            <main className="container">
-                <h1 className="covalence-blue">Hello {this.state.name}!</h1>
-                <h2></h2>
-            </main>
-        )
-    }
+const App: React.SFC<AppProps> = () => {
+    return (
+        <BrowserRouter>
+            <Switch>
+                <Route exact path="/" component={Home} />
+                <Route exact Path="/books" component={AllBooks} />
+            </Switch>
+        </BrowserRouter>
+    )
 }
 
-interface IAppProps {
-
-}
-
-interface IAppState {
-    name: string;
-}
+export interface AppProps { }

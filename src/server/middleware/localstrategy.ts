@@ -12,9 +12,9 @@ passport.use(new LocalStrategy.Strategy({
     session: false
 }, async (email, password, done) => {
     try {
-        let [author]: any = await DB.Authors.findOneByEmail(email);
-        if(author && ComparePassword(password, author.password)) {
-            done(null, author);
+        let [user]: any = await DB.Users.findOneByEmail(email);
+        if(user && ComparePassword(password, user.password)) {
+            done(null, user);
         } else {
             done(null, false);
         }

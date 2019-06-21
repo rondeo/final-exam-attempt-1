@@ -3,6 +3,6 @@ import booksRouter from './books';
 
 let router = Router();
 
-router.use('./books', booksRouter);
+router.use('/books', booksRouter);
 
 export default router;
