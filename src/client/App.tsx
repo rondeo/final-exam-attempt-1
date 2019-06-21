@@ -3,6 +3,7 @@ import './scss/app';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Home from './Components/Home';
 import AllBooks from './Components/AllBooks';
+import OneBook from './Components/OneBook';
 
 const App: React.SFC<AppProps> = () => {
     return (
@@ -10,7 +11,7 @@ const App: React.SFC<AppProps> = () => {
             <Switch>
                 <Route exact path="/" component={Home} />
                 <Route exact Path="/books" component={AllBooks} />
-                <Route exact path="/:id/details" component={OneBook} />
+                <Route exact path="/:id" component={OneBook} />
             </Switch>
         </BrowserRouter>
     )

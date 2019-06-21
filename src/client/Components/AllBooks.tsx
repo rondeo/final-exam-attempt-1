@@ -17,7 +17,7 @@ const AllBooks: React.SFC<AllBookProps> = () => {
                 <article className="col-md-12">
                     <ul className="list-group">
                         {books.map(book => (
-                            <li key={book.id}>{book.title} <Link className="btn btn-primary" to={`/${book.id}/details`}>Details</Link></li>
+                            <li key={book.id}>{book.title} <Link className="btn btn-primary" to={`/${book.id}`}>Details</Link></li>
                         ))}
                     </ul>
                 </article>
